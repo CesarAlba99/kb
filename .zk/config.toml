@@ -1,0 +1,43 @@
+# SETTINGS
+[note]
+
+language = "en"
+default-title = "Untitled"
+extension = "md"
+template = "default.md"
+
+# Neuron compatibility
+filename = "{{id}}"
+id-charset = "hex"
+id-length = 8
+id-case = "lower"
+
+
+[format.markdown]
+
+link-format = "wiki"
+hashtags = true
+colon-tags = true
+
+
+[tool]
+
+# editor = "nvim"
+# pager = "nvim"
+# fzf-preview = "bat -p --color always {-1}"
+
+
+[lsp]
+
+[lsp.diagnostics]
+
+wiki-title = "hint"
+dead-link = "error"
+
+[lsp.completion]
+# Show the note title in the completion pop-up, or fallback on its path if empty.
+note-label = "{{title-or-path}}"
+# Filter out the completion pop-up using the note title or its path.
+note-filter-text = "{{title}} {{path}}"
+# Show the note filename without extension as detail.
+note-detail = "{{filename-stem}}"
